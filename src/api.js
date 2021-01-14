@@ -35,12 +35,12 @@ export const newGamesURL = (pageNumber, platform) => {
   return `${baseURL}games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-released&platforms=${platform}&page=${pageNumber}`;
 };
 export const popularGamesURL = (pageNumber, platform) => {
-  return `${baseURL}games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-popular&platforms=${platform}&page=${pageNumber}&page=1`;
+  return `${baseURL}games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-popular&platforms=${platform}&page=${pageNumber}`;
 };
 export const bestOfTheYearGamesURL = (pageNumber, platform) => {
   return `${baseURL}games?key=${process.env.REACT_APP_API_KEY}&dates=${
     currentYear - 1
-  }-01-01,${currentDate}&ordering=-metacritic&platforms=${platform}&page=${pageNumber}&page=1`;
+  }-01-01,${currentDate}&ordering=-metacritic&platforms=${platform}&page=${pageNumber}`;
 };
 
 // По жанрам
