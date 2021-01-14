@@ -29,6 +29,7 @@
     transition: 0.3s;
     position: relative;
     overflow-x: hidden;
+    bottom: 0;
     @media screen and (max-width: 800px) {
       height: 100%;
     }
