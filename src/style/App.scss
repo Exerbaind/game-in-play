@@ -1,0 +1,15 @@
+@import "./variables";
+@import "./preloader";
+* {
+  font-family: $Roboto;
+}
+body {
+  background-color: $cTheme;
+}
+@import "../components/navbar/navbar";
+@import "../components/sidebar/sidebar";
+@import "../pages/games-pages/games-pages";
+@import "../layout/main/main";
+@import "../components/game-cards/game-card";
+@import "../components/game-page/game-page";
+@import "../components/filters/filters";

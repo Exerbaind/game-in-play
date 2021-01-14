@@ -1,0 +1,71 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: $cTheme;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  z-index: 15;
+  opacity: 0.7;
+  transition: 0.3s;
+  @media screen and (max-width: 800px) {
+    padding: 0 10px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  .navbar__container {
+    .navbar__menu {
+      height: 40px;
+      width: 40px;
+      background-color: transparent;
+      outline: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        span {
+          width: 100%;
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+      span {
+        height: 2px;
+        width: 75%;
+        background-color: white;
+        display: block;
+        position: relative;
+        border-radius: 10px;
+        transform: translateY(-5px);
+        transition: 0.3s;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 50%;
+          background-color: white;
+          transform: translateY(10px);
+          transition: 0.3s;
+        }
+      }
+    }
+    .navbar__menu--active {
+      span {
+        width: 100%;
+        transform: translateY(0px) rotate(45deg);
+        &:before {
+          width: 100%;
+          transform: translateY(0px) rotate(-90deg);
+        }
+      }
+    }
+  }
+}
