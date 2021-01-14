@@ -4,8 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPlatformerGames } from "../../actions/gamesAction";
 
+// Компоненты
+
 import Preloader from "../../components/Preloader";
 import Filters from "../../components/filters/Filters";
+import PageHandler from "../../components/page-handler/PageHandler";
 
 import GameCard from "../../components/game-cards/GameCard";
 // Подключение экшенов
@@ -36,9 +39,18 @@ const PlatformerGames = () => {
 
   const [pageNumber, setPageNumber] = useState(1);
 
-  const changePage = () => {
-    setPageNumber(pageNumber + 1);
+  const nextPage = () => {
+    if (pageNumber < 499) {
+      setPageNumber(pageNumber + 1);
+    }
   };
+  const prevPage = () => {
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1);
+    }
+  };
+
+  const popUpHandler = useSelector((state) => state.game.popUpHandler);
 
   const dispatch = useDispatch();
 
@@ -64,7 +76,12 @@ const PlatformerGames = () => {
           <Preloader />
         )}
       </div>
-      <button onClick={changePage}>Загрузить еще</button>
+      <PageHandler
+        popUpHandler={popUpHandler}
+        prevPage={prevPage}
+        pageNumber={pageNumber}
+        nextPage={nextPage}
+      />
     </div>
   );
 };

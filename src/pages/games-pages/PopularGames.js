@@ -4,8 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadPopularGames } from "../../actions/gamesAction";
 
+// Компоненты
+
 import Preloader from "../../components/Preloader";
 import PlatformFilter from "../../components/filters/PlatformFilter";
+import PageHandler from "../../components/page-handler/PageHandler";
 
 import GameCard from "../../components/game-cards/GameCard";
 // Подключение экшенов
@@ -29,9 +32,18 @@ const PopularGames = () => {
 
   const [pageNumber, setPageNumber] = useState(1);
 
-  const changePage = () => {
-    setPageNumber(pageNumber + 1);
+  const nextPage = () => {
+    if (pageNumber < 499) {
+      setPageNumber(pageNumber + 1);
+    }
   };
+  const prevPage = () => {
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1);
+    }
+  };
+
+  const popUpHandler = useSelector((state) => state.game.popUpHandler);
 
   const dispatch = useDispatch();
 
@@ -55,7 +67,12 @@ const PopularGames = () => {
           <Preloader />
         )}
       </div>
-      <button onClick={changePage}>Загрузить еще</button>
+      <PageHandler
+        popUpHandler={popUpHandler}
+        prevPage={prevPage}
+        pageNumber={pageNumber}
+        nextPage={nextPage}
+      />
     </div>
   );
 };
