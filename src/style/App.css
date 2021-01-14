@@ -204,6 +204,10 @@ body {
           transform: translateY(0px) rotate(-90deg);
 }
 
+.navbar--active {
+  opacity: 1;
+}
+
 .sidebar {
   position: fixed;
   left: 0;

@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 const Navbar = (props) => {
+  const popUpHandler = useSelector((state) => state.game.popUpHandler);
   return (
-    <header className="navbar">
+    <header className={`navbar ${popUpHandler ? "navbar--active" : ""}`}>
       <div className="navbar__container">
         <button
           className={`navbar__menu ${
