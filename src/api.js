@@ -97,9 +97,9 @@ export const screenshotsURL = (game_id) => {
 //   return `${baseURL}games/${game_id}/stores?key=${process.env.REACT_APP_API_KEY}`;
 // };
 
-// export const storeNameURL = (store_id) => {
-//   return `${baseURL}stores/${store_id}?key=${process.env.REACT_APP_API_KEY}`;
-// };
+export const storeNameURL = (store_id) => {
+  return `${baseURL}games/${store_id}/stores?key=${process.env.REACT_APP_API_KEY}`;
+};
 
 // export const searchGameURL = (game_name) => {
 //   return `${baseURL}games?search=${game_name}&page_size=10`;

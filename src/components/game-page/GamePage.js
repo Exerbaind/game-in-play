@@ -8,12 +8,36 @@ const GamePage = () => {
   const game = useSelector((state) => state.game.game);
   const popUpHandler = useSelector((state) => state.game.popUpHandler);
   const screenshots = useSelector((state) => state.game.screenshots);
+  const stores = useSelector((state) => state.game.stores);
 
   const dispatch = useDispatch();
 
   const gamePageToggle = () => {
     dispatch(closeGamePage());
     document.body.style.overflow = "auto";
+  };
+
+  const storeName = (store) => {
+    switch (store) {
+      case 2:
+        return "Microsoft Store";
+      case 3:
+        return "Playstation Store";
+      case 5:
+        return "Gog Store";
+      case 11:
+        return "Epic Games";
+      case 1:
+        return "Steam";
+      case 6:
+        return "Nintendo";
+      case 8:
+        return "Play Market";
+      case 4:
+        return "App Store";
+      default:
+        break;
+    }
   };
 
   return (
@@ -54,6 +78,22 @@ const GamePage = () => {
                 </span>
                 {game.released && dateTransform(game.released)}
               </p>
+            </div>
+            <div className="game-page__stores-item">
+              {stores &&
+                stores.map((store) => {
+                  return (
+                    <a
+                      href={store.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="stores-item__link"
+                      key={store.id}
+                    >
+                      {storeName(store.store_id)}
+                    </a>
+                  );
+                })}
             </div>
           </div>
           <div className="game-page__section">

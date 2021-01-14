@@ -117,7 +117,10 @@ const SmallGameCard = ({ game }) => {
               }
             })}
         </p>
-        <button className="game-card__more" onClick={() => takeGameID(game.id)}>
+        <button
+          className="game-card__more"
+          onClick={() => takeGameID(game.id, game.stores)}
+        >
           Подробнее
         </button>
       </div>
