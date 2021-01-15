@@ -110,6 +110,104 @@ body {
   background-color: #1f2128;
 }
 
+.form-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(31, 33, 40, 0.9);
+  padding: 80px 40px;
+  z-index: -1;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .form-container .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.form-container .form .form__input {
+  width: 80%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  font-size: 72px;
+  outline: none;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 800px) {
+  .form-container .form .form__input {
+    width: 100%;
+    font-size: 36px;
+  }
+}
+
+.form-container .form .form__input:focus {
+  border-bottom: 3px solid #6c5dd3;
+  color: #6c5dd3;
+}
+
+.form-container .form .form__submit {
+  width: 10%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .form-container .form .form__submit {
+    margin-top: 20px;
+    width: 20%;
+  }
+}
+
+.form-container .form .form__submit img {
+  width: 100%;
+}
+
+.form-container--active {
+  z-index: 8;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -138,6 +236,19 @@ body {
 
 .navbar:hover {
   opacity: 1;
+}
+
+.navbar .navbar__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar .navbar__container .navbar__menu {
@@ -190,6 +301,24 @@ body {
           transform: translateY(10px);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.navbar .navbar__container .navbar__search {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+}
+
+.navbar .navbar__container .navbar__search:hover {
+  background-color: #6c5dd3;
 }
 
 .navbar .navbar__container .navbar__menu--active span {
@@ -327,6 +456,10 @@ body {
   }
 }
 
+.mt-80 {
+  margin-top: 80px;
+}
+
 .main {
   width: 100%;
   -webkit-transition: 0.3s;
@@ -397,6 +530,7 @@ body {
 
 .game-card .game-card__content .game-card__title {
   font-size: 18px;
+  color: white;
 }
 
 .game-card .game-card__content .game-card__platforms {
@@ -425,6 +559,7 @@ body {
 .game-card .game-card__content .game-card__released-date {
   font-size: 14px;
   margin-top: 10px;
+  color: white;
 }
 
 .game-card .game-card__content .game-card__released-date span {

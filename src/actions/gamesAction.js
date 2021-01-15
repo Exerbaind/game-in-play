@@ -12,6 +12,7 @@ import {
   genreRacingGamesURL,
   genrePlatformerGamesURL,
   genreIndieGamesURL,
+  searchURL,
 } from "../api";
 
 export const loadPopularGames = (pageNumber, platformName) => async (
@@ -191,6 +192,25 @@ export const loadIndieGames = (
     type: "FETCH_INDIE_GAMES",
     payload: {
       genreIndie: indieGames.data.results,
+    },
+  });
+};
+
+export const loadSearchGames = (gameName) => async (dispatch) => {
+  const game = await axios.get(searchURL(gameName));
+  dispatch({
+    type: "FETCH_SEARCHED",
+    payload: {
+      searched: game.data.results,
+    },
+  });
+};
+
+export const searchClear = () => async (dispatch) => {
+  dispatch({
+    type: "SEARCHED_CLEAR",
+    payload: {
+      searched: [],
     },
   });
 };

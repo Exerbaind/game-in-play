@@ -35,6 +35,8 @@ const GamePage = () => {
         return "Play Market";
       case 4:
         return "App Store";
+      case 7:
+        return "Xbox Store";
       default:
         break;
     }

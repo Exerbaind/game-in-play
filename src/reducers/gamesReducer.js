@@ -13,9 +13,7 @@ const initialState = {
   genreRacing: [],
   genrePlatformer: [],
   genreIndie: [],
-  // upcoming: [],
   searched: [],
-  // определенная игра
 };
 
 const gamesReducer = (state = initialState, action) => {
@@ -80,11 +78,16 @@ const gamesReducer = (state = initialState, action) => {
         ...state,
         genreIndie: action.payload.genreIndie,
       };
-    // case "FETCH_SEARCHED":
-    //   return {
-    //     ...state,
-    //     searched: action.payload.searched,
-    //   };
+    case "FETCH_SEARCHED":
+      return {
+        ...state,
+        searched: action.payload.searched,
+      };
+    case "SEARCHED_CLEAR":
+      return {
+        ...state,
+        searched: action.payload.searched,
+      };
     default:
       return {
         ...state,

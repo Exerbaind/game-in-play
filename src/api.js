@@ -93,14 +93,12 @@ export const screenshotsURL = (game_id) => {
 
 // Магазины
 
-// export const storesURL = (game_id) => {
-//   return `${baseURL}games/${game_id}/stores?key=${process.env.REACT_APP_API_KEY}`;
-// };
-
 export const storeNameURL = (store_id) => {
   return `${baseURL}games/${store_id}/stores?key=${process.env.REACT_APP_API_KEY}`;
 };
 
-// export const searchGameURL = (game_name) => {
-//   return `${baseURL}games?search=${game_name}&page_size=10`;
-// };
+// Поиск игр
+
+export const searchURL = (game_name) => {
+  return `${baseURL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}&ordering=-metacritic&page_size=50`;
+};
