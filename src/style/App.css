@@ -456,8 +456,14 @@ body {
   }
 }
 
-.mt-80 {
-  margin-top: 80px;
+.padding {
+  padding: 80px 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .padding {
+    padding: 50px 10px;
+  }
 }
 
 .main {

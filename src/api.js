@@ -100,5 +100,5 @@ export const storeNameURL = (store_id) => {
 // Поиск игр
 
 export const searchURL = (game_name) => {
-  return `${baseURL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}&ordering=-metacritic&page_size=50`;
+  return `${baseURL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}&page_size=50`;
 };

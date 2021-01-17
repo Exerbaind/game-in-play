@@ -90,17 +90,18 @@ const SmallGameCard = ({ game }) => {
         <p className="game-card__title">{game.name}</p>
         <div className="game-card__platforms">
           <span>Платформы:</span>
-          {game.parent_platforms.map((platform) => {
-            return (
-              <img
-                src={gamePlatforms(platform.platform.slug)}
-                alt=""
-                className="game-card__platform-icon"
-                title={platform.platform.name}
-                key={platform.platform.id}
-              />
-            );
-          })}
+          {game.parent_platforms &&
+            game.parent_platforms.map((platform) => {
+              return (
+                <img
+                  src={gamePlatforms(platform.platform.slug)}
+                  alt=""
+                  className="game-card__platform-icon"
+                  title={platform.platform.name}
+                  key={platform.platform.id}
+                />
+              );
+            })}
         </div>
         <p className="game-card__released-date">
           <span>Дата выхода: </span>

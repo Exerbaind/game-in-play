@@ -16,7 +16,7 @@ const SearchedGames = () => {
   const games = useSelector((state) => state.games.searched);
 
   return (
-    <div className="games-page__container mt-80">
+    <div className="games-page__container padding">
       <div className="games-page__list">
         {games.length ? (
           games.map((game) => {
